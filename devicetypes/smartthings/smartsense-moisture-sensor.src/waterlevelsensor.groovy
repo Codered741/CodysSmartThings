@@ -17,7 +17,7 @@ import physicalgraph.zigbee.clusters.iaszone.ZoneStatus
 
 
 metadata {
-	definition(name: "SmartSense Moisture Sensor", namespace: "smartthings", author: "SmartThings") {
+	definition(name: "Water Level Sensor", namespace: "codered741", author: "Cody Redding") {
 		capability "Configuration"
 		capability "Battery"
 		capability "Refresh"
@@ -135,7 +135,7 @@ private Map parseIasMessage(String description) {
 }
 
 private Map translateZoneStatus(ZoneStatus zs) {
-	return zs.isAlarm1Set() ? getMoistureResult('wet') : getMoistureResult('dry')
+	return zs.isAlarm1Set() ? getMoistureResult('dry') : getMoistureResult('wet')
 }
 
 private Map getBatteryResult(rawValue) {
